@@ -1,0 +1,228 @@
+/* ===================================================
+   1. ESTILOS BASE Y RESET (UNIFICADOS CON EL CLON)
+   =================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Centrado general de secciones */
+section {
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h2, h3, h4 {
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.logo, 
+.banner-categoria h2, 
+.texto-banner-masc h2, 
+.texto-banner-kids h2 {
+    color: #FF0400; /* Rojo corporativo del clon[cite: 1] */
+}
+
+/* Banners de cabecera */
+.banner-categoria img, 
+.banner-masculino img, 
+.banner-infantil img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.descripcion-filtros, 
+.info-filtro-hombres, 
+.info-filtro-ninos {
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+/* ===================================================
+   2. GRILLA DE PRODUCTOS (DESKTOP)
+   =================================================== */
+#todocata,
+.contenedor-productos, 
+.grid-productos-hombres, 
+.grid-productos-ninos {
+    display: flex;             /* Siempre activo, no solo en hover */
+    flex-wrap: wrap;           /* Permite que bajen si no caben */
+    justify-content: center;
+    gap: 15px 30px;
+    width: 100%;
+    padding: 10px 0;
+}
+
+/* Estilo unificado para todas las Cards */
+.card-producto, 
+.item-producto-masc, 
+.item-producto-kids,
+.catalogo1, .catalogo2, .catalogo3, 
+.catalogo4, .catalogo5, .catalogo6 {
+    flex: 0 1 calc(33.333% - 30px);
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    height: auto !important; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Asegura que no haya líneas de link */
+}
+
+.link-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%; /* Asegura que cubra toda la tarjeta */
+}
+
+.card-producto:hover, 
+.item-producto-masc:hover, 
+.item-producto-kids:hover,
+.catalogo1:hover, .catalogo2:hover, .catalogo3:hover, 
+.catalogo4:hover, .catalogo5:hover, .catalogo6:hover {
+    transform: translateY(-10px); 
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+}
+
+.card-producto:hover, 
+.item-producto-kids:hover, 
+.item-producto-masc:hover {
+    transform: translateY(-5px);
+}
+
+/* Imágenes dentro de las Cards */
+.img-container img, 
+.caja-imagen img, 
+.caja-img-kids img,
+[class^="catalogo"] img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    margin-bottom: 1px;
+}
+
+/* Títulos de las Cards */
+.card-producto h4, 
+.item-producto-masc h4, 
+.item-producto-kids h4,
+[class^="catalogo"] h3 {
+    text-decoration: none !important;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333; /* Color gris oscuro del clon[cite: 1] */
+    margin-top: 10px;
+}
+
+/* ===================================================
+   3. CORRECCIÓN PARA EL FOOTER (FORZAR COLOR BLANCO)
+   =================================================== */
+.pie, 
+.pie h3, 
+.pie h4, 
+.pie p, 
+.pie a {
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+/* ===================================================
+   4. RESPONSIVIDAD (MEDIA QUERIES)
+   =================================================== */
+
+/* PANTALLAS GRANDES (> 1200px) */
+@media (min-width: 1200px) {
+    body { font-size: 18px; }
+    section { max-width: 1400px; }
+    .card-producto h4, [class^="catalogo"] h3 { font-size: 16px; }
+}
+
+/* TABLETS (max-width: 768px) */
+@media (max-width: 768px) {
+    body { font-size: 15px; }
+    .banner-categoria img { max-height: 300px; }
+    
+    .card-producto, 
+    .item-producto-masc, 
+    .item-producto-kids,
+    [class^="catalogo"] {
+        flex: 0 1 calc(50% - 20px); 
+        min-width: 200px;
+    }
+}
+
+/* MÓVILES (480px) */
+@media (max-width: 480px) {
+    
+    /* 1. Forzamos al contenedor a ser una columna vertical */
+    #todocata, 
+    .contenedor-productos, 
+    .grid-productos-hombres, 
+    .grid-productos-ninos {
+        display: flex !important;
+        flex-direction: column !important; /* Pone una card debajo de otra */
+        align-items: center !important;    /* Centra las cards[cite: 7] */
+        height: auto !important;           /* Elimina el estiramiento vertical */
+        gap: 30px !important;              /* Espacio cómodo entre productos */
+        padding: 20px 0 !important;
+    }
+
+    /* 2. Ajustamos las cards para que ocupen el ancho de la pantalla */
+    .card-producto, 
+    .item-producto-masc, 
+    .item-producto-kids,
+    [class^="catalogo"] {
+        flex: none !important;             /* Desactiva el cálculo flexible */
+        width: 90% !important;             /* Ocupa casi todo el ancho del celular */
+        max-width: 320px !important;       /* Evita que se vea gigante en tablets pequeñas */
+        height: auto !important;           /* La caja solo mide lo que mide su contenido */
+        min-height: unset !important;
+        padding: 15px !important;
+        border: 1px solid #eee;            /* Opcional: para darles forma de tarjeta */
+        border-radius: 8px;
+    }
+
+    /* 3. Ajustamos el tamaño de las letras para que sean legibles */
+    .card-producto h4, 
+    .item-producto-masc h4, 
+    .item-producto-kids h4,
+    [class^="catalogo"] h3 {
+        font-size: 18px !important;        /* Aumentamos el tamaño de la letra */
+        margin-top: 15px !important;
+        text-align: center !important;
+    }
+
+    /* 4. Ajuste de imágenes para que recuperen su forma */
+    .img-container img, 
+    .caja-imagen img, 
+    .caja-img-kids img,
+    [class^="catalogo"] img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 200px !important;      /* Tamaño adecuado para el lente[cite: 7] */
+        object-fit: contain !important;
+    }
+}
