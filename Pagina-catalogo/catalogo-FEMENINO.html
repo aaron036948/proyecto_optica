@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Óptica Pouker</title>
+    <link rel="stylesheet" href="css/estilo-catalogo.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="encabezado">
+
+    <!-- BOTÓN MENÚ MÓVIL -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="boton-menu">☰</label>
+
+    <!-- MENÚ MÓVIL -->
+    <div class="menu-movil">
+        <label for="menu-toggle" class="cerrar">✕</label>
+
+        <nav class="menu-categorias">
+            <a href="catalogo.html">TODOS</a>
+            <a href="#">FEMENINO</a>
+            <a href="catalogo-MASCULINO.html">MASCULINO</a>
+            <a href="catalogo-INFANTIL.html">INFANTIL</a>
+            <a href="#">CONÓCENOS</a>
+        </nav>
+
+        <div class="menu-extra">
+            <a href="#">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="#">Contacto</a>
+        </div>
+    </div>
+
+    <!-- BARRA SUPERIOR -->
+    <div class="barra-superior">
+        <nav class="menu-superior">
+            <a href="#">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="#">Contacto</a>
+        </nav>
+
+        <div class="redes-sociales">
+            <img src="img/iconos/instagram.png" alt="">
+            <img src="img/iconos/facebook.png" alt="">
+        </div>
+    </div>
+
+    <!-- BARRA PRINCIPAL -->
+    <div class="barra-principal">
+
+        <!-- BUSCADOR -->
+        <div class="buscador">
+            <label for="buscar">
+                <img src="img/iconos/lupa.png" class="icono">
+            </label>
+            <input type="text" id="buscar" placeholder="Buscar..." class="entrada-busqueda">
+        </div>
+
+        <!-- CENTRO -->
+        <div class="centro">
+            <h2 class="logo">ÓPTICA POUKER</h2>
+
+            <nav class="categorias">
+                <a href="catalogo.html">TODOS</a>
+                <a href="#">FEMENINO</a>
+                <a href="catalogo-MASCULINO.html">MASCULINO</a>
+                <a href="catalogo-INFANTIL.html">INFANTIL</a>
+                <a href="#">CONÓCENOS</a>
+            </nav>
+        </div>
+
+        <!-- ICONOS -->
+        <div class="iconos">
+            <img src="img/iconos/favorito.png" alt="">
+            <img src="img/iconos/login.png" alt="">
+            <img src="img/iconos/compra.png" alt="">
+        </div>
+
+    </div>
+</header>
+
+    <!-- SECCIÓN DE CATEGORÍA ESPECÍFICA (EJ: MUJERES) -->
+    <section id="categoria-mujeres">
+        
+        <!-- Banner Principal -->
+        <div class="banner-categoria">
+            <img src="img\femenino_1_c6f75115-7b70-4c37-bd74-36939a399e89_1080x.webp" alt="Promoción para ella">
+            <div class="texto-banner">
+                <h2>PARA ELLA</h2>
+                <p>Las mejores opciones en gafas y monturas</p>
+            </div>
+        </div>
+
+        <!-- Descripciones intermadias -->
+        <div class="descripcion-filtros">
+            <h3>Puedes filtrar los productos por Precio, Formato, Tamaño, Color, Tipo, Material, etc.</h3>
+            <p>Selecciona tu producto favorito, compra sin salir de casa y recibe tus lentes con Envío Gratuito a toda Bolivia. También puedes probarte los productos que quieras con nuestro <a>Servicio a domicilio gratuito</a>.</p>
+        </div>
+
+        <!-- Contenedor de las 5 Cards -->
+        <div class="contenedor-productos">
+            
+            <!-- Card 1 -->
+            <article class="card-producto">
+                <div class="img-container">
+                    <img src="img\gafas-mujeres\118-ROSADA-NEGRA.webp" alt="Montura para mujer">
+                </div>
+                <h4>MONTURAS</h4>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card-producto">
+                <div class="img-container">
+                    <img src="img\gafas-mujeres\123-ROSADO.webp" alt="Gafas de sol">
+                </div>
+                <h4>GAFAS</h4>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card-producto">
+                <div class="img-container">
+                    <img src="img\gafas-mujeres\90-ROJO.webp" alt="Clip-on 2 en 1">
+                </div>
+                <h4>CLIP-ON 2 EN 1</h4>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card-producto">
+                <div class="img-container">
+                    <img src="img\gafas-mujeres\90ROJO.webp" alt="Montura tendencia">
+                </div>
+                <h4>TENDENCIAS</h4>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="card-producto">
+                <div class="img-container">
+                    <img src="img\gafas-mujeres\nego.webp" alt="Colección Premium">
+                </div>
+                <h4>PREMIUM</h4>
+            </article>
+
+        </div>
+    </section>
+
+
+
+<!-- FOOTER -->
+<footer class="pie">
+
+    <div class="pie-contenedor">
+
+        <div class="pie-columna">
+            <h3>ÓPTICA POUKER</h3>
+            <p>Tu mejor opción en lentes de calidad.</p>
+        </div>
+
+        <div class="pie-columna">
+            <h4>ENLACES</h4>
+            <a href="#">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="../Contacto/coontacto.html">Contacto</a>
+        </div>
+
+        <div class="pie-columna">
+            <h4>SUSCRÍBETE</h4>
+            <p>Recibe ofertas y novedades</p>
+
+            <div class="suscripcion">
+                <input type="email" placeholder="correo@gmail.com">
+                <button>Suscribir</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="pie-inferior">
+        <p>© 2026 Óptica Pouker</p>
+    </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Óptica Pouker</title>
+    <link rel="stylesheet" href="css/estilo-catalogo.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="encabezado">
+
+    <!-- BOTÓN MENÚ MÓVIL -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="boton-menu">☰</label>
+
+    <!-- MENÚ MÓVIL -->
+    <div class="menu-movil">
+        <label for="menu-toggle" class="cerrar">✕</label>
+
+        <nav class="menu-categorias">
+            <a href="catalogo.html">TODOS</a>
+            <a href="catalogo-FEMENINO.html">FEMENINO</a>
+            <a href="#">MASCULINO</a>
+            <a href="catalogo-INFANTIL.html">INFANTIL</a>
+            <a href="#">CONÓCENOS</a>
+        </nav>
+
+        <div class="menu-extra">
+            <a href="#">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="#">Contacto</a>
+        </div>
+    </div>
+
+    <!-- BARRA SUPERIOR -->
+    <div class="barra-superior">
+        <nav class="menu-superior">
+            <a href="#">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="#">Contacto</a>
+        </nav>
+
+        <div class="redes-sociales">
+            <img src="../header y footer/img/iconos/instagram.png" alt="">
+            <img src="../header y footer/img/iconos/facebook.png" alt="">
+        </div>
+    </div>
+
+    <!-- BARRA PRINCIPAL -->
+    <div class="barra-principal">
+
+        <!-- BUSCADOR -->
+        <div class="buscador">
+            <label for="buscar">
+                <img src="img/iconos/lupa.png" class="icono">
+            </label>
+            <input type="text" id="buscar" placeholder="Buscar..." class="entrada-busqueda">
+        </div>
+
+        <!-- CENTRO -->
+        <div class="centro">
+            <h2 class="logo">ÓPTICA POUKER</h2>
+
+            <nav class="categorias">
+                <a href="catalogo.html">TODOS</a>
+                <a href="catalogo-FEMENINO.html">FEMENINO</a>
+                <a href="catalogo-MASCULINO.html">MASCULINO</a>
+                <a href="catalogo-INFANTIL.html">INFANTIL</a>
+                <a href="#">CONÓCENOS</a>
+            </nav>
+        </div>
+
+        <!-- ICONOS -->
+        <div class="iconos">
+            <img src="img/iconos/favorito.png" alt="">
+            <img src="img/iconos/login.png" alt="">
+            <img src="img/iconos/compra.png" alt="">
+        </div>
+
+    </div>
+</header>
+
+
+
+<!-- SECCIÓN DE CATEGORÍA ESPECÍFICA: INFANTIL -->
+<section id="categoria-ninos">
+    
+    <!-- Banner Principal Infantil -->
+    <div class="banner-infantil">
+        <img src="img\INFANTIL.webp" alt="Colección divertida para los más pequeños">
+        <div class="texto-banner-kids">
+            <h2>PARA LOS PEQUES</h2>
+            <p>Resistencia y color para sus aventuras diarias</p>
+        </div>
+    </div>
+
+    <!-- Info de Selección Infantil -->
+    <div class="info-filtro-ninos">
+        <h3>Lentes Flexibles y Seguros</h3>
+        <p>Contamos con materiales ultra-resistentes diseñados para el ritmo de los niños. Protección visual con los diseños que a ellos más les gustan.</p>
+    </div>
+
+    <!-- Grilla de Productos Infantiles -->
+    <div class="grid-productos-ninos">
+        
+        <!-- Producto 1 -->
+        <article class="item-producto-kids">
+            <div class="caja-img-kids">
+                <img src="img\gafas-ninos\0001.webp" alt="Lentes flexibles para niños">
+            </div>
+            <h4>MONTURAS FLEX</h4>
+        </article>
+
+        <!-- Producto 2 -->
+        <article class="item-producto-kids">
+            <div class="caja-img-kids">
+                <img src="img\gafas-ninos\0002.webp" alt="Gafas de sol para niños">
+            </div>
+            <h4>SOL Y AVENTURA</h4>
+        </article>
+
+        <!-- Producto 3 -->
+        <article class="item-producto-kids">
+            <div class="caja-img-kids">
+                <img src="img\gafas-ninos\0003.webp" alt="Lentes deportivos infantiles">
+            </div>
+            <h4>DEPORTE ESCOLAR</h4>
+        </article>
+
+        <!-- Producto 4 -->
+        <article class="item-producto-kids">
+            <div class="caja-img-kids">
+                <img src="img\gafas-ninos\0004.webp" alt="Lentes de colores">
+            </div>
+            <h4>FULL COLOR</h4>
+        </article>
+
+        <!-- Producto 5 -->
+        <article class="item-producto-kids">
+            <div class="caja-img-kids">
+                <img src="img\gafas-ninos\0005.webp" alt="Lentes con protección Blue Light">
+            </div>
+            <h4>BLUE LIGHT (TABLETS)</h4>
+        </article>
+
+    </div>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer class="pie">
+
+    <div class="pie-contenedor">
+
+        <div class="pie-columna">
+            <h3>ÓPTICA POUKER</h3>
+            <p>Tu mejor opción en lentes de calidad.</p>
+        </div>
+
+        <div class="pie-columna">
+            <h4>ENLACES</h4>
+            <a href="#">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="../Contacto/coontacto.html">Contacto</a>
+        </div>
+
+        <div class="pie-columna">
+            <h4>SUSCRÍBETE</h4>
+            <p>Recibe ofertas y novedades</p>
+
+            <div class="suscripcion">
+                <input type="email" placeholder="correo@gmail.com">
+                <button>Suscribir</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="pie-inferior">
+        <p>© 2026 Óptica Pouker</p>
+    </div>
+
+</footer>
+
+</body>
+</html>
