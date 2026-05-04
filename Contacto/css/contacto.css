@@ -1,0 +1,196 @@
+/* =========================
+   BASE (MISMA QUE ESTILOS.CSS)
+========================= */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* CONTENEDOR */
+#contenedor-principal {
+    width: 80%;
+    margin: 40px auto;
+}
+
+/* =========================
+   NAV INTERNO
+========================= */
+.contenedor-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.nav-inicio {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.nav-titulo {
+    font-size: 18px;
+    color: #555;
+}
+
+/* =========================
+   TITULOS
+========================= */
+.titulo-principal {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+/* =========================
+   FORMULARIO
+========================= */
+.contenedor-formulario {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.texto-formulario {
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.fila-formulario {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.input-form {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.textarea-form {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.btn-enviar {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 25px;
+    background: #ff9800;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* =========================
+   CONTACTO
+========================= */
+.contenedor-contacto {
+    margin-top: 40px;
+}
+
+.titulo-contacto {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.item-contacto {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+/* =========================
+   📺 DESKTOP GRANDE (2000px+)
+========================= */
+@media (min-width: 2000px) {
+
+    #contenedor-principal {
+        width: 60%;
+    }
+
+    .titulo-principal {
+        font-size: 36px;
+    }
+
+    .nav-inicio,
+    .nav-titulo,
+    .texto-formulario,
+    .item-contacto {
+        font-size: 16px;
+    }
+
+    .input-form,
+    .textarea-form {
+        font-size: 15px;
+    }
+}
+
+/* =========================
+   📱 TABLET (600px - 900px)
+========================= */
+@media (max-width: 900px) {
+
+    .fila-formulario {
+        flex-direction: column;
+    }
+
+    .titulo-principal {
+        font-size: 34px; /* MÁS GRANDE */
+    }
+
+    .nav-inicio,
+    .nav-titulo {
+        font-size: 19px;
+    }
+
+    .texto-formulario,
+    .item-contacto {
+        font-size: 17px;
+    }
+
+    .input-form,
+    .textarea-form {
+        font-size: 16px;
+    }
+
+    .btn-enviar {
+        font-size: 17px;
+    }
+}
+
+/* =========================
+   📱 MÓVIL (400px o menos)
+========================= */
+@media (max-width: 400px) {
+
+    #contenedor-principal {
+        width: 90%;
+    }
+
+    .titulo-principal {
+        font-size: 36px; /* MÁS GRANDE */
+    }
+
+    .nav-inicio,
+    .nav-titulo {
+        font-size: 19px;
+    }
+
+    .texto-formulario,
+    .item-contacto {
+        font-size: 18px;
+    }
+
+    .input-form,
+    .textarea-form {
+        font-size: 17px;
+    }
+
+    .btn-enviar {
+        font-size: 18px;
+        padding: 14px;
+    }
+}

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Óptica Pouker</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="..\header y footer\estilos.css">
+    <link rel="stylesheet" href="css\contacto.css">
 </head>
 <body>
 
@@ -43,8 +44,8 @@
         </nav>
 
         <div class="redes-sociales">
-            <img src="iconos/instagram.png" alt="">
-            <img src="iconos/facebook.png" alt="">
+            <img src="..\header y footer\iconos\instagram.png" alt="">
+            <img src="..\header y footer\iconos\facebook.png" alt="">
         </div>
     </div>
 
@@ -54,7 +55,7 @@
         <!-- BUSCADOR -->
         <div class="buscador">
             <label for="buscar">
-                <img src="iconos/lupa.png" class="icono">
+                <img src="..\header y footer\iconos\lupa.png" class="icono">
             </label>
             <input type="text" id="buscar" placeholder="Buscar..." class="entrada-busqueda">
         </div>
@@ -81,11 +82,55 @@
 
     </div>
 </header>
+<div id="contenedor-principal">
 
-<!-- CONTENIDO -->
-<main class="contenido">
-    <h1>AQUÍ CONTENIDO</h1>
-</main>
+    <!-- Navegación / Encabezado sección -->
+    <section class="contenedor-nav">
+        <a href="index.html" class="nav-inicio">Inicio</a>
+        <h2 class="nav-titulo">Contáctanos</h2>
+    </section>
+
+    <!-- Título principal -->
+    <h1 class="titulo-principal">ÓPTICA POUKER</h1>
+
+    <!-- Formulario -->
+    <section class="contenedor-formulario">
+        <p class="texto-formulario">
+            Completa tus datos y nuestro equipo te responderá lo antes posible.
+        </p>
+
+        <div class="fila-formulario">
+            <input type="text" class="input-form" placeholder="Nombre">
+            <input type="email" class="input-form" placeholder="Correo electrónico">
+        </div>
+
+        <div class="fila-formulario">
+            <input type="text" class="input-form" placeholder="Número de teléfono (WhatsApp)">
+        </div>
+
+        <div class="fila-formulario">
+            <textarea class="textarea-form" placeholder="Mensaje"></textarea>
+        </div>
+
+        <button type="submit" class="btn-enviar" href="gracias.html">
+            <a href="gracias.html"> ENVIAR</a>
+        </button>
+    </section>
+
+    <!-- Información -->
+    <section class="contenedor-contacto">
+        <h2 class="titulo-contacto">Contacto</h2>
+
+        <p class="item-contacto"><strong>Correo:</strong> contacto@opticpouker.com</p>
+        <p class="item-contacto"><strong>WhatsApp:</strong> (+591) 77071255</p>
+        <p class="item-contacto"><strong>Instagram:</strong> @opticpouker</p>
+        <p class="item-contacto"><strong>Facebook:</strong> Óptica Pouker</p>
+        <p class="item-contacto"><strong>Dirección:</strong> Cochabamba, Bolivia</p>
+    </section>
+
+</div>
+
+</body>
 
 <!-- FOOTER -->
 <footer class="pie">
@@ -101,7 +146,7 @@
             <h4>ENLACES</h4>
             <a href="#">Inicio</a>
             <a href="#">Catálogo</a>
-            <a href="..\Contacto\coonto.html">Contacto</a>
+            <a href="..\Contacto\gracias.html">Contacto</a>
         </div>
 
         <div class="pie-columna">
@@ -122,5 +167,4 @@
 
 </footer>
 
-</body>
 </html>
