@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de lentes y gafas en Óptica Tendencias Urbano. Busca por género, precio o modelo.">
+    <meta name="keywords" content="óptica, lentes, gafas, monturas, vista, cuidado ocular">
+    <title>Buscar — Óptica Tendencias Urbano</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="buscar.css">
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="encabezado">
+
+    <div class="barra-superior">
+        <nav class="menu-superior" aria-label="Navegación principal">
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+
+        <div class="redes-sociales" aria-label="Redes sociales">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Visitar Instagram">
+                <img src="iconos/instagram.png" alt="">
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visitar Facebook">
+                <img src="iconos/facebook.png" alt="">
+            </a>
+        </div>
+    </div>
+
+    <div class="barra-principal">
+        <!--
+            FIX: logo centrado con position:absolute en CSS
+            Se eliminó el div.barra-lado vacío (era un hack)
+            FIX: <p> en lugar de <h1> — el h1 semántico es el título BUSCAR
+        -->
+        <p class="logo">
+            <a href="index.html" aria-label="Ir a inicio">ÓPTICA TENDENCIAS URBANO</a>
+        </p>
+
+        <div class="barra-iconos">
+            <a href="#" class="icono" aria-label="Favoritos">
+                <img src="iconos/favorito.png" alt="">
+            </a>
+            <a href="#" class="icono" aria-label="Mi cuenta">
+                <img src="iconos/login.png" alt="">
+            </a>
+            <!-- CARRITO CON PANEL DESPLEGABLE -->
+            <div class="icono carrito" id="carritoBtn" role="button" tabindex="0" aria-label="Abrir carrito">
+                <img src="iconos/compra.png" alt="Carrito">
+                <span class="badge" id="carrito-contador">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- PANEL CARRITO — fuera de barra-iconos para posicionarlo bien -->
+    <div class="carrito-panel" id="carritoPanel" aria-label="Carrito de compras" hidden>
+        <div class="carrito-panel-header">
+            <span>🛒 Mi Carrito</span>
+            <button class="carrito-cerrar" id="carritoCerrar" type="button" aria-label="Cerrar">✕</button>
+        </div>
+        <div class="carrito-lista" id="carritoLista"></div>
+        <div class="carrito-panel-footer" id="carritoFooter"></div>
+    </div>
+
+</header>
+
+<!-- ===== BUSCADOR ===== -->
+<!-- FIX: h1 aquí (no en el header) — correcto semánticamente -->
+<section class="zona-busqueda">
+    <h1>BUSCAR</h1>
+    <div class="linea-roja"></div>
+
+    <div class="buscador-wrap">
+        <label for="inputBusqueda" class="sr-only">Buscar lentes</label>
+        <input
+            type="search"
+            id="inputBusqueda"
+            name="busqueda"
+            placeholder="Buscar lentes..."
+            autocomplete="off"
+            aria-label="Buscar productos"
+        >
+        <button type="button" id="btnBuscar" aria-label="Buscar">🔍</button>
+    </div>
+</section>
+
+<!-- ===== LAYOUT ===== -->
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" aria-label="Panel de filtros">
+        <span class="sidebar-titulo">Filtros</span>
+
+        <div class="grupo-titulo">
+            <span>Género</span>
+        </div>
+
+        <!-- FIX: role=group + aria-labelledby para accesibilidad en checkboxes -->
+        <div class="filtro-opciones" id="grupo-genero" role="group" aria-label="Filtrar por género">
+            <div class="filtro-opcion">
+                <input type="checkbox" id="f-mujer" name="genero" value="mujer">
+                <label for="f-mujer">Femenino</label>
+            </div>
+            <div class="filtro-opcion">
+                <input type="checkbox" id="f-ninos" name="genero" value="niños">
+                <label for="f-ninos">Niños</label>
+            </div>
+            <div class="filtro-opcion">
+                <input type="checkbox" id="f-unisex" name="genero" value="unisex">
+                <label for="f-unisex">Unisex</label>
+            </div>
+            <div class="filtro-opcion">
+                <input type="checkbox" id="f-varon" name="genero" value="varón">
+                <label for="f-varon">Masculino</label>
+            </div>
+        </div>
+
+        <button class="limpiar-link" id="btnLimpiar" type="button">Limpiar filtros</button>
+    </aside>
+
+    <!-- RESULTADOS -->
+    <div class="zona-resultados">
+        <div class="resultados-header">
+            <!-- aria-live: el lector de pantalla anuncia cambios automáticamente -->
+            <div class="resultados-info" id="contador" aria-live="polite"></div>
+
+            <select class="orden-select" id="orden" aria-label="Ordenar productos">
+                <option value="default">Relevancia</option>
+                <option value="asc">Precio: menor a mayor</option>
+                <option value="desc">Precio: mayor a menor</option>
+            </select>
+        </div>
+
+        <div class="grid-productos" id="productos" role="list"></div>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<!-- FIX: nombre de marca unificado a ÓPTICA POUKER -->
+<footer class="pie">
+    <div class="pie-contenedor">
+
+        <div class="pie-columna">
+            <h3>ÓPTICA TENDENCIAS URBANO</h3>
+            <p>Lentes modernos, calidad garantizada y estilo urbano.</p>
+        </div>
+
+        <div class="pie-columna">
+            <h4>Tienda</h4>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="#">Novedades</a>
+            <a href="#">Ofertas</a>
+        </div>
+
+        <div class="pie-columna">
+            <h4>Ayuda</h4>
+            <a href="contacto.html">Contacto</a>
+            <a href="#">Envíos</a>
+            <a href="#">Devoluciones</a>
+            <a href="#">Privacidad</a>
+        </div>
+
+        <div class="pie-columna">
+            <h4>Suscríbete</h4>
+            <form class="suscripcion" id="formSuscripcion" novalidate>
+                <label for="emailSuscripcion" class="sr-only">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="emailSuscripcion"
+                    name="email"
+                    placeholder="correo@gmail.com"
+                    required
+                    autocomplete="email"
+                >
+                <button type="submit">OK</button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="pie-inferior">
+        <p>© 2026 Óptica Tendencias Urbano · Todos los derechos reservados</p>
+    </div>
+</footer>
+
+<script src="buscar.js" defer></script>
+</body>
+</html>
