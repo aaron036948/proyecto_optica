@@ -1,0 +1,316 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BASE */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+.encabezado {
+    background-color: #FF0400;
+    color: white;
+    position: relative;
+}
+
+/* BOTÓN MENÚ */
+#menu-toggle {
+    display: none;
+}
+
+.boton-menu {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+/* MENÚ MÓVIL */
+.menu-movil {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 75%;
+    height: 100%;
+    background: white;
+    color: black;
+    padding: 30px 20px;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+#menu-toggle:checked ~ .menu-movil {
+    left: 0;
+}
+
+/* CERRAR */
+.cerrar {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+/* MENÚ INTERNO */
+.menu-categorias {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-categorias a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.menu-extra {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-extra a {
+    text-decoration: none;
+    color: #555;
+}
+
+/* =========================
+   BARRA SUPERIOR
+========================= */
+.barra-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    flex-wrap: wrap;
+}
+
+.menu-superior {
+    display: flex;
+    gap: 25px;
+}
+
+.menu-superior a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 10px;
+}
+
+.redes-sociales img {
+    width: 22px;
+    filter: brightness(0) invert(1);
+}
+
+/* =========================
+   BARRA PRINCIPAL
+========================= */
+.barra-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    flex-wrap: wrap;
+}
+
+/* BUSCADOR */
+.buscador {
+    display: flex;
+    align-items: center;
+}
+
+.icono {
+    width: 26px;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+}
+
+.entrada-busqueda {
+    width: 0;
+    opacity: 0;
+    margin-left: 10px;
+    padding: 6px;
+    border-radius: 20px;
+    border: none;
+    transition: 0.3s;
+}
+
+.entrada-busqueda:focus {
+    width: 160px;
+    opacity: 1;
+    background: white;
+    color: black;
+}
+
+/* CENTRO */
+.centro {
+    text-align: center;
+}
+
+.logo {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* CATEGORÍAS */
+.categorias {
+    display: flex;
+    gap: 25px;
+}
+
+.categorias a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* ICONOS */
+.iconos {
+    display: flex;
+    gap: 15px;
+}
+
+.iconos img {
+    width: 26px;
+    filter: brightness(0) invert(1);
+    cursor: pointer;
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+.contenido {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido h1 {
+    font-size: 40px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.pie {
+    background: #FF0400;
+    color: white;
+}
+
+.pie-contenedor {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 5%;
+    flex-wrap: wrap;
+}
+
+.pie-columna {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 250px;
+}
+
+.pie-columna a {
+    color: white;
+    text-decoration: none;
+}
+
+/* SUSCRIPCIÓN */
+.suscripcion {
+    display: flex;
+    gap: 10px;
+}
+
+.suscripcion input {
+    padding: 6px;
+    border-radius: 5px;
+    border: none;
+}
+
+.suscripcion button {
+    background: white;
+    color: #FF0400;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+/* FOOTER INFERIOR */
+.pie-inferior {
+    text-align: center;
+    padding: 10px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    /* MOSTRAR MENÚ */
+    .boton-menu {
+        display: block;
+    }
+
+    /* OCULTAR MENÚ NORMAL */
+    .menu-superior,
+    .categorias {
+        display: none;
+    }
+
+    /* HEADER */
+    .barra-superior {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .barra-principal {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .iconos {
+        justify-content: center;
+    }
+
+    /* BUSCADOR */
+    .entrada-busqueda:focus {
+        width: 120px;
+    }
+
+    /* FOOTER */
+    .pie-contenedor {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    /* TEXTO */
+    .contenido h1 {
+        font-size: 28px;
+    }
+}
